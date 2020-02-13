@@ -1,0 +1,11 @@
+.layout-container {
+    max-width: 90%;
+    height: 100%;
+    padding: 5%;
+}
+
+.contact-me {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

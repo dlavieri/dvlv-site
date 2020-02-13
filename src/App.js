@@ -10,16 +10,19 @@ import ProjectsPage from './pages/projects/projects';
 import PubPage from './pages/publications/publications';
 import BlogPage from './pages/blog/blog';
 
+import MobileNav from './components/mobile-nav/mobile-nav';
+
 function App() {
   return (
       <Router>
         <div className="app">
           <Row className="app-main-row">
-            <Col xs={2} className="app-nav-col">
+            <Col xs={3} className="app-nav-col">
               <NavBar />
             </Col>
 
-            <Col fluid={true} className="app-main-col">
+            <Col fluid className="app-main-col">
+              <MobileNav />
               <Route exact path="/" component={AboutPage} />
               <Route path="/projects" component={ProjectsPage} />
               <Route path="/publications" component={PubPage} />

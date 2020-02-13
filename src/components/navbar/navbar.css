@@ -1,0 +1,55 @@
+.navbar-container {
+    width: 100%;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-right: 1px solid #c2c2c2;
+    min-width: 210px;
+}
+
+.nav-menu > h4 {
+    margin: 5% 0 10% 0;
+    font-weight: bold;
+}
+
+.nav-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-ul {
+    width: 70%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-ul > li {
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav-ul > li > a {
+    color: #000;
+}
+
+.profile-img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin: 10% 0;
+}
+
+.nav-contact-me {
+    width: 70%;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10%;
+}

@@ -1,0 +1,34 @@
+.pub-card {
+    font-size: 0.8em;
+    width: 100%;
+    padding: 5px 0 5px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    transition: background-color 500ms ease-in;
+}
+.pub-card:hover {
+    background-color: #f7f7f7;
+}
+
+.pub-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    width: 100%;
+    border-bottom: solid 1px #c2c2c2;
+    margin-bottom: 3px;
+}
+.pub-title a:hover {
+    color: #000;
+}
+.pub-squib-text {
+    margin-bottom: 5px;
+    padding: 0 10px 0 0;
+}
+
+.pub-details {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    color: #c2c2c2;
+    padding: 0 10px 0 0;
+}
