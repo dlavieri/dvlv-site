@@ -8,7 +8,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    background-color: red;
+    background-color: #fff;
     padding: 0 10px;
 }
 
@@ -26,6 +26,7 @@
     height: 40px;
     width: 40px;
     border-radius: 50%;
+    z-index: 101;
 }
 
 .mobile-head {
