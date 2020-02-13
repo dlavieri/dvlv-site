@@ -12,6 +12,13 @@ const Menu = props => {
             <li onClick={props.slideback}><Link to="/projects">projects</Link></li>
             <li onClick={props.slideback}><Link to="/publications">publications</Link></li>
             {/* <li onClick={props.slideback}><Link to="/blog">blog</Link></li> */}
+            <li><div className="nav-contact-me">
+                <a href="https://angel.co/david-lavieri"><i className="fab fa-angellist"></i></a>
+                <a href="https://linkedin.com/in/davidlavieri"><i className="fab fa-linkedin"></i></a>
+                <a href="https://github.com/dlavieri"><i className="fab fa-github"></i></a>
+                <a href="https://medium.com/@dvlavieri"><i className="fab fa-medium"></i></a>
+                <a href="https://instagram.com/dvlavieri"><i className="fab fa-instagram"></i></a>
+            </div></li>
         </ul> 
     )
 }
