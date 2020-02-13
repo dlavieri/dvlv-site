@@ -1,9 +1,9 @@
 .menu-icon {
     display: inline-block;
     cursor: pointer;
-    width: 50px;
+    width: 33px;
     z-index: 10;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 
 .bar1, .bar2, .bar3 {

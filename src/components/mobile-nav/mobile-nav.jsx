@@ -25,7 +25,7 @@ const MobileNav = () => {
             <div className="nav-mobile">
                 <img src={photo} alt="David Lavieri" className="mobile-img"/>
                 <h4 className="mobile-head">David Lavieri</h4>
-                <MenuIcon toggle={() => toggleMenu(!menuOpen)}/>
+                <MenuIcon toggle={() => toggleMenu(!menuOpen)} menuOpen={menuOpen}/>
             </div>
             <CSSTransition
                 in={menuOpen}

@@ -21,7 +21,7 @@ function App() {
               <NavBar />
             </Col>
 
-            <Col fluid className="app-main-col">
+            <Col fluid="true" className="app-main-col">
               <MobileNav />
               <Route exact path="/" component={AboutPage} />
               <Route path="/projects" component={ProjectsPage} />
