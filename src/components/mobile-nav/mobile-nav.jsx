@@ -11,7 +11,7 @@ const Menu = props => {
             <li onClick={props.slideback}><Link to="/">about</Link></li>
             <li onClick={props.slideback}><Link to="/projects">projects</Link></li>
             <li onClick={props.slideback}><Link to="/publications">publications</Link></li>
-            <li onClick={props.slideback}><Link to="/blog">blog</Link></li>
+            {/* <li onClick={props.slideback}><Link to="/blog">blog</Link></li> */}
         </ul> 
     )
 }

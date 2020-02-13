@@ -14,7 +14,7 @@ const NavBar = props => {
                     <li><Link to="/">about</Link></li>
                     <li><Link to="/projects">projects</Link></li>
                     <li><Link to="/publications">publications</Link></li>
-                    <li><Link to="/blog">blog</Link></li>
+                    {/* <li><Link to="/blog">blog</Link></li> */}
                 </ul>
             </div>
             <div className="nav-contact-me">

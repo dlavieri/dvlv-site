@@ -1,0 +1,31 @@
+.projects-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.project {
+    margin-bottom: 5%;
+}
+
+.project-img {
+    max-width: 100%;
+    max-height: 220px;
+}
+
+.project-title {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #c2c2c2;
+}
+
+.project-title > span {
+    margin-left: 5%;
+    font-size: 0.6em;
+    line-height: 3em;
+}
+
+.img-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
