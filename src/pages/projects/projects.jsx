@@ -1,6 +1,7 @@
 import React from 'react';
 import jamify from '../../assets/jamify.png';
 import minesweeper from '../../assets/minesweeper.png';
+import covid19 from '../../assets/covid.png';
 import './projects.css';
 import Layout from '../../components/layout/layout';
 
@@ -23,6 +24,19 @@ const ProjectsPage = props => {
                             <li>Frontend Stack: React.js, Redux, Redux Thunk, Jest, Enzyme, Axios</li>
                             <li>Backend Stack: Node.js, Express, PostgreSQL</li>
                             <li>View github repository <a className="blue-a" href="https://github.com/dlavieri/jamify">here</a></li>
+                        </ul>
+                    </div>
+
+                    <div className="project">
+                        <div className="project-title"><h5><a className="blue-a" href="http://covid19-casetracker.herokuapp.com/">COVID-19 Tracker</a></h5></div>
+                        <div className="img-container"><img src={covid19} alt="covid19" className="project-img covid19"/></div>
+                        <p>A realtime tracker of the novel Coronavirus (CoVid-19) pandemic of 2020.</p>
+                        <ul>
+                            <li>Connects to realtime data API which aggregates CoVid case data from around the world.</li>
+                            <li>Select a country by clicking it's geography on the map, or by selecting it's name from the dropdown selector, to see upt-to-date data on cases, deaths, and recoveries.</li>
+                            <li>Responsive design between desktop and mobile surfaces.</li>
+                            <li>Frontend Stack: React.js, D3</li>
+                            <li>View github repository <a className="blue-a" href="https://github.com/dlavieri/covid19-tracker">here</a></li>
                         </ul>
                     </div>
 
