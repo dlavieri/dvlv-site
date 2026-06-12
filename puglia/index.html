@@ -1,0 +1,1579 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>David's Third Twelfth Birthday</title>
+    <meta
+      name="description"
+      content="A static birthday event website for a week at Villa Pezze in Puglia, Italy."
+    >
+    <style>
+      :root {
+        --paper: #f7f4ec;
+        --limestone: #fdfbf4;
+        --ink: #1c2733;
+        --muted: #6c7280;
+        --line: #d9d3c3;
+        --olive: #2e5f8f;
+        --olive-dark: #1c3a5a;
+        --sea: #1f78a8;
+        --terracotta: #c2911c;
+        --sun: #e9bd4f;
+        --charcoal: #15222f;
+        --white: #ffffff;
+        --shadow: 0 18px 42px rgba(23, 38, 53, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.55;
+        letter-spacing: 0;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .hero {
+        position: relative;
+        display: flex;
+        align-items: center;
+        min-height: 84svh;
+        overflow: hidden;
+        color: var(--white);
+        background-image: url("assets/puglia-hero-coast.jpg");
+        background-position: center;
+        background-size: cover;
+      }
+
+      .hero::before {
+        position: absolute;
+        inset: 0;
+        content: "";
+        background: linear-gradient(
+          90deg,
+          rgba(21, 34, 47, 0.8) 0%,
+          rgba(21, 34, 47, 0.42) 54%,
+          rgba(21, 34, 47, 0.12) 100%
+        );
+      }
+
+      .hero-inner {
+        position: relative;
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 6rem 0 4rem;
+      }
+
+      .hero-copy {
+        width: min(720px, 100%);
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: #f7d28b;
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 11ch;
+        margin-bottom: 1.2rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 9vw, 7.5rem);
+        line-height: 0.93;
+        font-weight: 700;
+      }
+
+      .hero-lede {
+        max-width: 620px;
+        margin-bottom: 2rem;
+        color: rgba(255, 255, 255, 0.88);
+        font-size: clamp(1.05rem, 2vw, 1.32rem);
+      }
+
+      .hero-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 46px;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 6px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        transform: translateY(-1px);
+        outline: none;
+      }
+
+      .button-primary {
+        background: var(--sun);
+        color: #2b2112;
+      }
+
+      .button-secondary {
+        border-color: rgba(255, 255, 255, 0.45);
+        color: var(--white);
+      }
+
+      .button-secondary:hover,
+      .button-secondary:focus-visible {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .event-strip {
+        border-bottom: 1px solid var(--line);
+        background: var(--limestone);
+      }
+
+      .event-strip-inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        background: var(--line);
+      }
+
+      .event-fact {
+        min-height: 112px;
+        padding: 1.35rem;
+        background: var(--limestone);
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 0.45rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .event-fact strong {
+        display: block;
+        font-size: clamp(1.05rem, 2vw, 1.35rem);
+        line-height: 1.2;
+      }
+
+      .section {
+        padding: 5.5rem 0;
+      }
+
+      .section-band {
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--limestone);
+      }
+
+      .container {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.65fr);
+        gap: clamp(1.5rem, 4vw, 4rem);
+        align-items: end;
+        margin-bottom: 2.5rem;
+      }
+
+      .section-head h2 {
+        margin-bottom: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.2rem, 5vw, 4.6rem);
+        line-height: 0.98;
+      }
+
+      .section-head p {
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .villa-summary {
+        position: sticky;
+        top: 92px;
+        padding: 1.5rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .cheers-divider {
+        display: grid;
+        place-items: center;
+        padding: 3rem 0 3.5rem;
+      }
+
+      .cheers-divider img {
+        width: min(380px, 70%);
+        mix-blend-mode: darken;
+      }
+
+      .coast-divider img {
+        width: min(920px, 92%);
+      }
+
+      .villa-summary h3,
+      .route-card h3,
+      .thing h3,
+      .attendee-card h3,
+      .schedule-item h3 {
+        margin-bottom: 0.55rem;
+        font-size: 1.1rem;
+        line-height: 1.2;
+      }
+
+      .villa-summary p,
+      .route-card p,
+      .thing p,
+      .attendee-card p,
+      .schedule-item p {
+        color: var(--muted);
+      }
+
+      .villa-address {
+        padding: 0.85rem 1rem;
+        border: 1px solid rgba(46, 95, 143, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 250, 240, 0.78);
+        font-style: normal;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin: 1.25rem 0;
+      }
+
+      .metric {
+        min-height: 98px;
+        padding: 1rem;
+        border: 1px solid rgba(46, 95, 143, 0.22);
+        border-radius: 8px;
+        background: rgba(255, 250, 240, 0.78);
+      }
+
+      .metric strong {
+        display: block;
+        color: var(--olive-dark);
+        font-size: 1.4rem;
+        line-height: 1;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .feature-list {
+        display: grid;
+        gap: 0.7rem;
+        margin: 1.4rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .feature-list li {
+        display: flex;
+        gap: 0.7rem;
+        align-items: flex-start;
+      }
+
+      .feature-list li::before {
+        flex: 0 0 auto;
+        width: 0.62rem;
+        height: 0.62rem;
+        margin-top: 0.45rem;
+        border-radius: 50%;
+        background: var(--terracotta);
+        content: "";
+      }
+
+      .villa-gallery {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 0.75rem;
+      }
+
+      .villa-gallery figure {
+        position: relative;
+        min-height: 220px;
+        margin: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        background: #d8d3c7;
+      }
+
+      .villa-gallery figure:first-child {
+        grid-column: span 7;
+        grid-row: span 2;
+        min-height: 480px;
+      }
+
+      .villa-gallery figure:not(:first-child) {
+        grid-column: span 5;
+      }
+
+      .villa-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .villa-gallery figcaption {
+        position: absolute;
+        left: 0.85rem;
+        bottom: 0.85rem;
+        max-width: calc(100% - 1.7rem);
+        padding: 0.45rem 0.55rem;
+        border-radius: 5px;
+        background: rgba(21, 34, 47, 0.76);
+        color: var(--white);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .villa-copy {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+
+      .text-panel {
+        padding: 1.25rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 250, 240, 0.72);
+      }
+
+      .text-panel p:last-child {
+        margin-bottom: 0;
+      }
+
+      .source-note {
+        margin-top: 1rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .villa-scroll {
+        margin-top: 3rem;
+      }
+
+      .villa-scroll-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .villa-scroll-head h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.6rem;
+        line-height: 1.1;
+      }
+
+      .villa-scroll-head span {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .villa-scroll-row {
+        display: flex;
+        gap: 0.75rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(21, 34, 47, 0.35) transparent;
+        padding-bottom: 0.6rem;
+      }
+
+      .villa-scroll-row::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .villa-scroll-row::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .villa-scroll-row::-webkit-scrollbar-thumb {
+        background: rgba(21, 34, 47, 0.32);
+        border-radius: 3px;
+      }
+
+      .villa-scroll-row img {
+        flex: 0 0 clamp(260px, 38vw, 420px);
+        display: block;
+        width: clamp(260px, 38vw, 420px);
+        height: 280px;
+        object-fit: cover;
+        border-radius: 8px;
+        background: #d8d3c7;
+        scroll-snap-align: start;
+      }
+
+      .schedule-grid,
+      .attendee-grid,
+      .route-grid,
+      .things-grid {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .schedule-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .schedule-item,
+      .attendee-card,
+      .route-card,
+      .thing {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--limestone);
+      }
+
+      .schedule-item {
+        min-height: 230px;
+        padding: 1.35rem;
+      }
+
+      .schedule-number {
+        display: inline-grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        background: var(--olive);
+        color: var(--white);
+        font-weight: 900;
+      }
+
+      .attendee-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .attendee-card {
+        overflow: hidden;
+      }
+
+      .attendee-image {
+        display: grid;
+        min-height: 240px;
+        place-items: center;
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(135deg, rgba(31, 120, 168, 0.18), rgba(233, 189, 79, 0.22)),
+          var(--paper);
+        color: var(--olive-dark);
+        font-size: 2.4rem;
+        font-weight: 900;
+        overflow: hidden;
+      }
+
+      .attendee-image img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .attendee-body {
+        padding: 1.1rem;
+      }
+
+      .attendee-title {
+        display: inline-block;
+        margin-bottom: 0.65rem;
+        color: var(--terracotta);
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .attendee-facts {
+        display: grid;
+        gap: 0.3rem;
+        margin: 0;
+        padding-left: 0;
+        list-style: none;
+        color: var(--muted);
+      }
+
+      .route-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .route-card {
+        padding: 1.35rem;
+      }
+
+      .route-card strong {
+        color: var(--olive-dark);
+      }
+
+      .route-card-wide {
+        grid-column: 1 / -1;
+      }
+
+      .route-wide-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 1.75rem;
+        margin-top: 1.1rem;
+        padding-top: 1.1rem;
+        border-top: 1px solid var(--line);
+      }
+
+      .route-subhead {
+        margin: 0 0 0.9rem;
+        color: var(--olive-dark);
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .spec {
+        display: grid;
+        gap: 0;
+        margin: 0;
+      }
+
+      .spec-row {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 0.85rem;
+        align-items: baseline;
+        padding: 0.55rem 0;
+        border-bottom: 1px dashed rgba(46, 95, 143, 0.2);
+      }
+
+      .spec-row:last-child {
+        border-bottom: 0;
+      }
+
+      .spec-row dt {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+      }
+
+      .spec-row dd {
+        margin: 0;
+        color: var(--ink);
+        font-size: 0.95rem;
+      }
+
+      .route-alt-list {
+        display: grid;
+        gap: 0.9rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .route-alt-list li {
+        color: var(--muted);
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .route-alt-list strong {
+        display: block;
+        margin-bottom: 0.15rem;
+        color: var(--olive-dark);
+      }
+
+      @media (max-width: 720px) {
+        .route-wide-inner {
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+
+        .spec-row {
+          grid-template-columns: 1fr;
+          gap: 0.15rem;
+          padding: 0.55rem 0;
+        }
+      }
+
+      .steps {
+        display: grid;
+        gap: 0.85rem;
+        margin: 1rem 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .steps li {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 0.65rem;
+        align-items: start;
+        color: var(--muted);
+      }
+
+      .steps span {
+        display: grid;
+        width: 30px;
+        height: 30px;
+        place-items: center;
+        border: 1px solid rgba(31, 120, 168, 0.25);
+        border-radius: 50%;
+        color: var(--sea);
+        font-size: 0.8rem;
+        font-weight: 900;
+      }
+
+      .things-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .thing.thing-wide {
+        grid-column: 1 / -1;
+        padding: 1.35rem;
+        border-top-color: var(--sun);
+      }
+
+      .puglia-map {
+        margin-bottom: 2.5rem;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--limestone);
+        box-shadow: var(--shadow);
+      }
+
+      .puglia-map iframe {
+        display: block;
+        width: 100%;
+        height: 460px;
+        border: 0;
+      }
+
+      .puglia-map-foot {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        padding: 0.85rem 1.1rem;
+        border-top: 1px solid var(--line);
+        background: var(--paper);
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .puglia-map-foot strong {
+        color: var(--olive-dark);
+      }
+
+      @media (max-width: 720px) {
+        .puglia-map iframe {
+          height: 360px;
+        }
+      }
+
+      .thing {
+        overflow: hidden;
+        padding: 0;
+        border-top: 5px solid var(--sea);
+      }
+
+      .thing:nth-child(2n) {
+        border-top-color: var(--terracotta);
+      }
+
+      .thing:nth-child(3n) {
+        border-top-color: var(--olive);
+      }
+
+      .thing-gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(21, 34, 47, 0.35) transparent;
+        background: #d8d3c7;
+      }
+
+      .thing-gallery img {
+        flex: 0 0 100%;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        background: #d8d3c7;
+        scroll-snap-align: start;
+      }
+
+      .thing-gallery::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      .thing-gallery::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .thing-gallery::-webkit-scrollbar-thumb {
+        background: rgba(21, 34, 47, 0.32);
+        border-radius: 3px;
+      }
+
+      .thing-body {
+        min-height: 180px;
+        padding: 1.25rem;
+      }
+
+      .thing-tag {
+        display: inline-block;
+        margin-bottom: 1rem;
+        color: var(--muted);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .section-divider {
+        width: min(1160px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 2.5rem 0;
+      }
+
+      .section-divider img {
+        width: 100%;
+        mix-blend-mode: darken;
+      }
+
+@media (max-width: 980px) {
+        .event-strip-inner,
+        .section-head,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        .villa-summary {
+          position: static;
+        }
+
+        .schedule-grid,
+        .route-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .attendee-grid,
+        .things-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        .villa-gallery figure:first-child,
+        .villa-gallery figure:not(:first-child) {
+          grid-column: span 12;
+          min-height: 300px;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .hero {
+          min-height: 82svh;
+          background-position: 58% center;
+        }
+
+        .hero::before {
+          background: rgba(21, 34, 47, 0.62);
+        }
+
+        .hero-inner {
+          padding-top: 4rem;
+        }
+
+        h1 {
+          max-width: 8ch;
+        }
+
+        .event-strip-inner,
+        .schedule-grid,
+        .attendee-grid,
+        .route-grid,
+        .things-grid,
+        .villa-copy,
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .villa-gallery figure:first-child,
+        .villa-gallery figure:not(:first-child) {
+          min-height: 230px;
+        }
+
+        .attendee-card {
+          display: flex;
+          align-items: center;
+        }
+
+        .attendee-image {
+          flex: 0 0 110px;
+          width: 110px;
+          height: 110px;
+          min-height: 0;
+          margin: 0.75rem;
+          border-bottom: 0;
+          border-radius: 6px;
+        }
+
+        .attendee-image img {
+          height: 100%;
+        }
+
+        .attendee-body {
+          flex: 1;
+          padding: 0.9rem 1rem 0.9rem 0.25rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .button {
+          transition: none;
+        }
+
+        .button:hover,
+        .button:focus-visible {
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Villa Pezze, Carovigno</p>
+          <h1>David's Third Twelfth Birthday</h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="event-strip" aria-label="Event summary">
+        <div class="event-strip-inner">
+          <div class="event-fact">
+            <span class="label">Where</span>
+            <strong>Villa Pezze, near Carovigno</strong>
+          </div>
+          <div class="event-fact">
+            <span class="label">When</span>
+            <strong>Check-in July 27 &middot; Check-out August 1</strong>
+          </div>
+          <div class="event-fact">
+            <span class="label">Home Base</span>
+            <strong>10 guests, 6 bedrooms</strong>
+          </div>
+          <div class="event-fact">
+            <span class="label">Nearest Airport</span>
+            <strong>Brindisi, about 26 km</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="attendees" aria-labelledby="attendees-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Attendees</p>
+              <h2 id="attendees-title">The guest list</h2>
+            </div>
+            <p>
+              A shared cast for the villa week, with room for names, arrival notes, and portraits as the plans firm up.
+            </p>
+          </div>
+
+          <div class="attendee-grid">
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="David's photo"><img src="assets/david.jpg" alt="David" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">David</span>
+                <ul class="attendee-facts">
+                  <li>📷 @dvlavieri</li>
+                  <li>🏙️ New York City</li>
+                  <li>♌️ Leo</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Adrian's photo"><img src="assets/adrian.jpg" alt="Adrian" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Adrian</span>
+                <ul class="attendee-facts">
+                  <li>📷 @adrian.austintatious</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♒️ Aquarius</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Amanda's photo"><img src="assets/amanda.jpg" alt="Amanda" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Amanda</span>
+                <ul class="attendee-facts">
+                  <li>📷 @arpalmer10</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♉️ Taurus</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Anne's photo"><img src="assets/anne.jpg" alt="Anne" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Anne</span>
+                <ul class="attendee-facts">
+                  <li>📷 @actuallyanne</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♉️ Taurus</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Carlos's photo"><img src="assets/carlos.jpg" alt="Carlos" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Carlos</span>
+                <ul class="attendee-facts">
+                  <li>📷 @carlitooo_</li>
+                  <li>🏙️ New York City</li>
+                  <li>♍️ Virgo</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Hannelle's photo"><img src="assets/hannelle.jpg" alt="Hannelle" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Hannelle</span>
+                <ul class="attendee-facts">
+                  <li>📷 @hannellephant</li>
+                  <li>🏙️ New York City</li>
+                  <li>♋️ Cancer</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Keith's photo"><img src="assets/keith.jpg" alt="Keith" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Keith</span>
+                <ul class="attendee-facts">
+                  <li>📷 @kyetz11</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♊️ Gemini</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Lauren's photo"><img src="assets/lauren.jpg" alt="Lauren" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Lauren</span>
+                <ul class="attendee-facts">
+                  <li>📷 @lmmgibson</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♒️ Aquarius</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Loryn's photo"><img src="assets/loryn.jpg" alt="Loryn" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Loryn</span>
+                <ul class="attendee-facts">
+                  <li>📷 @loryn_rapunzswole</li>
+                  <li>🌉 San Francisco</li>
+                  <li>♉️ Taurus</li>
+                </ul>
+              </div>
+            </article>
+            <article class="attendee-card">
+              <div class="attendee-image" aria-label="Sydney's photo"><img src="assets/sydney.jpg" alt="Sydney" loading="lazy"></div>
+              <div class="attendee-body">
+                <span class="attendee-title">Sydney</span>
+                <ul class="attendee-facts">
+                  <li>📷 @sydstinner</li>
+                  <li>🏙️ New York City</li>
+                  <li>♌️ Leo</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="cheers-divider" aria-hidden="true">
+        <img src="assets/cheers.jpeg" alt="" loading="lazy">
+      </div>
+
+      <section class="section section-band" id="accommodations" aria-labelledby="accommodations-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Accommodations</p>
+              <h2 id="accommodations-title">Villa Pezze</h2>
+            </div>
+            <p>
+              A modern stone villa near Carovigno with a main house, a separate annexe, gardens, and a private pool. The listing places the villa close to Ostuni, Brindisi, and the Adriatic beaches.
+            </p>
+          </div>
+
+          <div class="villa-scroll">
+            <div class="villa-scroll-head">
+              <span>Scroll to see more</span>
+            </div>
+            <div class="villa-scroll-row" aria-label="Full Villa Pezze photo strip">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030a0253.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030aa8f6.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030be0ce.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030be9fc.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030d5c28.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030d61d8.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030d6990.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d030ebf7f.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0310a442.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031195fb.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0311a0b2.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0311a83c.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031332c7.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03133c82.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03145af3.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031586b1.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03158c4f.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03159626.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0317564e.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03175f7e.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0318c0a2.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0318c91d.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0319e2bf.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0319e807.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031aed84.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031b873b.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031c72a2.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031c79e4.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031d8d69.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031ec90d.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d031ed06d.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d03210f66.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d032115e8.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0323a1e7.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0324a043.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+              <img src="https://pms-images.oliverstravels.com/dwellings/19528/main/6835d0325b245.jpg?profile=lg" alt="Villa Pezze" loading="lazy">
+            </div>
+          </div>
+
+          <div class="split">
+            <aside class="villa-summary" aria-label="Villa Pezze summary">
+              <h3>Stay details</h3>
+              <p>
+                Oliver's Travels lists Villa Pezze as a single-storey retreat with a four-bedroom main villa and a two-bedroom annexe, sleeping up to 12 guests.
+              </p>
+
+              <address class="villa-address">
+                <span class="label">Address</span>
+                Contrada Pezze Morelli, Carovigno, 72012, Italy
+              </address>
+
+              <div class="metric-grid">
+                <div class="metric">
+                  <strong>12</strong>
+                  <span>Guest capacity</span>
+                </div>
+                <div class="metric">
+                  <strong>6</strong>
+                  <span>Bedrooms</span>
+                </div>
+                <div class="metric">
+                  <strong>26 km</strong>
+                  <span>From Brindisi Airport</span>
+                </div>
+                <div class="metric">
+                  <strong>2 km</strong>
+                  <span>To Torre Santa Sabina</span>
+                </div>
+              </div>
+
+              <ul class="feature-list">
+                <li>Private saltwater infinity pool with optional heating listed by the property.</li>
+                <li>Outdoor kitchen, BBQ, shaded pergolas, outdoor shower, and alfresco dining space.</li>
+                <li>Air conditioning, Wi-Fi, satellite TV, parking, washing machine, and dishwasher.</li>
+                <li>Nearest train station: Stazione di Carovigno, about 4 km from the villa.</li>
+              </ul>
+            </aside>
+
+              <p class="source-note">
+                Villa details and photos are sourced from
+                <a href="https://www.oliverstravels.com/italy/puglia/villa-pezze/" target="_blank" rel="noreferrer">Oliver's Travels</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true">
+        <img src="assets/transport-illustration.jpeg" alt="" loading="lazy">
+      </div>
+
+      <section class="section section-band" id="logistics" aria-labelledby="logistics-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Logistics</p>
+              <h2 id="logistics-title">Getting to the villa</h2>
+            </div>
+            <p>
+              Brindisi is the closest arrival point. Rome works best as a connection city if you are flying internationally or want to turn the trip into a longer Italian itinerary.
+            </p>
+          </div>
+
+          <div class="route-grid">
+            <article class="route-card route-card-wide">
+              <h3>From Brindisi</h3>
+              <p><strong>Best for:</strong> the simplest arrival.</p>
+              <ul class="steps">
+                <li><span>1</span>Fly into Brindisi Airport, also listed as Aeroporto del Salento or BDS.</li>
+                <li><span>2</span>Rent a car or book a private transfer for the roughly 26 km drive to Villa Pezze.</li>
+                <li><span>3</span>Use the car for beaches, Ostuni, Carovigno, and grocery runs during the week.</li>
+              </ul>
+            </article>
+
+            <article class="route-card route-card-wide">
+              <h3>From Rome by rail or car</h3>
+              <p><strong>Best for:</strong> slower, scenic travel — turn the journey into part of the trip.</p>
+
+              <div class="route-wide-inner">
+                <div>
+                  <h4 class="route-subhead">High-speed train · Rome to Brindisi</h4>
+                  <dl class="spec">
+                    <div class="spec-row">
+                      <dt>Departure</dt>
+                      <dd>Roma Termini</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Arrival</dt>
+                      <dd>Brindisi Centrale</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Operator</dt>
+                      <dd>Trenitalia &mdash; Frecciargento or Frecciarossa</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Duration</dt>
+                      <dd>~5h 15m &ndash; 6h direct</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Frequency</dt>
+                      <dd>6&ndash;8 trains/day &middot; 07:50, 09:50, 11:50, 13:50, 17:50</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Fares</dt>
+                      <dd>€40 advance &middot; €60&ndash;€100 standard &middot; €120 business</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Local connection</dt>
+                      <dd>Brindisi &rarr; Stazione di Carovigno regional, ~€2.50, ~25 min</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Last 4 km</dt>
+                      <dd>Taxi or villa pickup to Villa Pezze (~€10&ndash;€15)</dd>
+                    </div>
+                  </dl>
+                </div>
+
+                <div>
+                  <h4 class="route-subhead">Other ways from Rome</h4>
+                  <ul class="route-alt-list">
+                    <li>
+                      <strong>Overnight train</strong>
+                      Intercity Notte from Roma Termini to Brindisi, ~8h with couchettes from ~€50. Sleep through the journey.
+                    </li>
+                    <li>
+                      <strong>By car</strong>
+                      ~560 km / 6h via the A1 and A14. Plan it as a full road day with a stop in Vasto, Termoli, or Bari.
+                    </li>
+                  </ul>
+                  <p class="source-note" style="margin-top: 1.1rem;">
+                    Book at
+                    <a href="https://www.trenitalia.com/" target="_blank" rel="noreferrer">trenitalia.com</a>
+                    or
+                    <a href="https://www.italotreno.com/" target="_blank" rel="noreferrer">italotreno.com</a>.
+                    Tickets release ~120 days ahead; the cheapest fares sell out first.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="cheers-divider coast-divider" aria-hidden="true">
+        <img src="assets/beach.jpeg" alt="" loading="lazy">
+      </div>
+
+      <section class="section" id="day-trips" aria-labelledby="day-trips-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Salento beaches</p>
+              <h2 id="day-trips-title">Day trips</h2>
+            </div>
+          </div>
+
+          <div class="puglia-map" aria-label="Map of Southern Puglia with Villa Pezze marked near Carovigno">
+            <iframe
+              src="https://www.openstreetmap.org/export/embed.html?bbox=16.6%2C39.75%2C18.9%2C41.25&amp;layer=mapnik&amp;marker=40.7036%2C17.6603"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map of Southern Puglia"
+            ></iframe>
+            <div class="puglia-map-foot">
+              <span><strong>Pin:</strong> Carovigno — Villa Pezze is about 4 km north toward Torre Santa Sabina.</span>
+              <span>
+                <a href="https://www.openstreetmap.org/?mlat=40.7036&amp;mlon=17.6603#map=9/40.5/17.8" target="_blank" rel="noreferrer">View larger map</a>
+              </span>
+            </div>
+          </div>
+
+          <div class="things-grid">
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Baia dei Turchi">
+                <img src="https://spiagge.life/img/3570/900/500/baia-dei-turchi_3570.jpg" alt="The sandy bay of Baia dei Turchi near Otranto" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baia_dei_Turchi_-_Otranto.jpg?width=900" alt="The Baia dei Turchi cove near Otranto" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baia_dei_Turchi.jpg?width=900" alt="Beach and pine-backed shore of Baia dei Turchi" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">No. 1 pick &middot; ~50 min &middot; Adriatic</span>
+                <h3>Baia dei Turchi</h3>
+                <p>A wild crescent of light sand and turquoise water inside the protected Alimini Lakes oasis, reached by a 10&ndash;15 minute walk through pine forest from paid lots (~€4&ndash;8/day). Few services, so pack water and food — then pair it with an evening in Otranto's old town.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Baia delle Zagare">
+                <img src="https://tourismmedia.italia.it/is/image/mitur/20210416181458-baia-delle-zagare-puglia-gettyimages-464451044-1?wid=1080&amp;hei=660&amp;fit=constrain,1&amp;fmt=webp" alt="The white cliffs and sea stacks of Baia delle Zagare" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baia_delle_Zagare_-_Farallons.jpg?width=900" alt="The faraglioni sea stacks at Baia delle Zagare" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Baia_delle_zagare_-_Vieste.jpg?width=900" alt="The pebble beach of Baia delle Zagare on the Gargano coast" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">No. 2 pick &middot; ~3h &middot; Gargano</span>
+                <h3>Baia delle Zagare</h3>
+                <p>The postcard of northern Puglia: a white pebble beach beneath chalk cliffs and twin faraglioni sea stacks, inside the Gargano National Park near Mattinata. Beach access is largely reserved for the clifftop resort, so day visitors usually come by boat from Mattinata or Vieste. A long haul from the villa — plan it as a full road-trip day or an overnight.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Torre dell'Orso">
+                <img src="https://www.turismovacanza.net/wp-content/uploads/2019/07/torre-dell-orso.jpg" alt="The bay and beach of Torre dell'Orso" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Due_sorelle_(Torre_dell%27Orso).jpg?width=900" alt="The Due Sorelle twin sea stacks at Torre dell'Orso" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torre_dell%27Orso_-_vue_de_la_plage_depuis_la_tour.jpg?width=900" alt="Torre dell'Orso beach seen from the watchtower" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">No. 3 pick &middot; ~30 min &middot; Adriatic</span>
+                <h3>Torre dell'Orso</h3>
+                <p>A wide arc of golden sand between pine-topped cliffs, famous for the Due Sorelle ("Two Sisters") sea stacks at its southern end. Plenty of lidos plus a free central stretch, with bars and restaurants right behind the beach — the easiest big-group day on the Adriatic side, and the shortest drive on this list.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Torre Colimena">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Torre_Colimena_vista_dalle_Dune_della_Palude_del_Conte.jpg?width=900" alt="Torre Colimena seen from the dunes of Palude del Conte" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Tramonto_a_Torre_Colimena.jpg?width=900" alt="Sunset over the sea at Torre Colimena" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Salento_-_Torre_Colimena_(TA).JPG?width=900" alt="The watchtower and coast at Torre Colimena" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Underrated backup &middot; Ionian</span>
+                <h3>Torre Colimena</h3>
+                <p>Just north of Punta Prosciutto and noticeably quieter — a wilder stretch of the same coast beside the Salina dei Monaci salt pan, where flamingos wade in summer. The smart fallback if the headline beaches are overrun.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Porto Selvaggio">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_view_of_Porto_Selvaggio_bay_from_the_pine-wood_(4751333429).jpg?width=900" alt="Porto Selvaggio bay framed by the pine forest" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Porto_Selvaggio_bay_(4751333487).jpg?width=900" alt="The rocky cove and clear water of Porto Selvaggio" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Porto_Selvaggio_scogliera.jpg?width=900" alt="The cliffs of Porto Selvaggio" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Snorkel wildcard &middot; Ionian</span>
+                <h3>Porto Selvaggio</h3>
+                <p>A rocky cove in a regional natural park, a 15&ndash;20 minute pine-forest hike from the road. Deep, glass-clear water chilled by freshwater springs — the best snorkeling in Salento. No lidos, bring water shoes. A half-day adventure for the fit subset, not a full-group base.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Grotta della Poesia and Roca Vecchia">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grotta_della_Poesia_(2).jpg?width=900" alt="The natural pool of Grotta della Poesia" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Grotta_della_Poesia_-_Roca_Vecchia_(LE).jpg?width=900" alt="The Poesia sinkhole at the Roca Vecchia archaeological site" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Roca_Vecchia_baia_1.jpg?width=900" alt="The rocky bay at Roca Vecchia" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Photo stop only &middot; Adriatic</span>
+                <h3>Grotta della Poesia</h3>
+                <p>Salento's famous sinkhole pool at Roca Vecchia — but swimming is now banned and the steps are gated for archaeological restoration (€3 ticket, May&ndash;Sept, no umbrellas or chairs). Treat it as a 30-minute photo and history stop on an Adriatic-coast day.</p>
+              </div>
+            </article>
+            <article class="thing thing-wide">
+              <h3>The beach-day playbook</h3>
+              <p>What actually matters for a group of 10 in the last week of July.</p>
+              <dl class="spec">
+                <div class="spec-row">
+                  <dt>Book a lido</dt>
+                  <dd>The single best move for 10 people: reserve umbrellas and sunbeds online in advance (~€15&ndash;35 per umbrella). <a href="https://www.spiagge.it/stabilimenti-balneari/salento/" target="_blank" rel="noreferrer">spiagge.it</a> lists ~228 bookable Salento beach clubs with seat-map booking.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Go early</dt>
+                  <dd>For free-beach days, arrive 7:30&ndash;9:00. Lots at Punta Prosciutto, Torre Lapillo, and Baia dei Turchi fill by mid-morning in peak season.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Parking</dt>
+                  <dd>Budget €4&ndash;10 per car per day at the big-name beaches.</dd>
+                </div>
+                <div class="spec-row">
+                  <dt>Wind rule</dt>
+                  <dd>Locals pick the coast by the wind: Tramontana (from the north) &rarr; Ionian side (Punta Prosciutto, Pescoluse). Sirocco (from the south) &rarr; Adriatic side (Torre dell'Orso, Baia dei Turchi).</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true">
+        <img src="assets/trulli-illustration.jpeg" alt="" loading="lazy">
+      </div>
+
+      <section class="section section-band" id="towns" aria-labelledby="towns-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Hill towns &amp; cities</p>
+              <h2 id="towns-title">Towns worth the drive</h2>
+            </div>
+            <p>
+              Where to wander and, more importantly, where to eat. Restaurant picks are fact-checked against the live 2026 Michelin guide and current reviews. Drive times are from the villa — and every sit-down dinner for 10 in late July needs a reservation.
+            </p>
+          </div>
+
+          <div class="things-grid">
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Ostuni">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ostuni_col_drone.jpg?width=900" alt="Aerial view of Ostuni's white old town" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ostuni_-_View_from_Northwest_-_1.jpg?width=900" alt="Ostuni hilltop seen from the northwest" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ostuni_-_Cattedrale_di_Santa_Maria_Assunta_-_01.jpg?width=900" alt="Ostuni Cathedral facade and rose window" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Top evening pick &middot; ~15 min</span>
+                <h3>Ostuni</h3>
+                <p>The White City glows at golden hour — go after 5 p.m., when the cruise-bus crowds thin and parking stops being a battle (the old town is residents-only; use the peripheral paid lots). Deepest restaurant bench in the area, with five Michelin-selected spots: book <strong>Casa San Giacomo</strong> or Bib Gourmand <strong>Osteria Piazzetta Cattedrale</strong> for dinner, <strong>Trattoria Fave e Fogghje</strong> for lunch, and <strong>Borgo Antico Bistrot</strong> for sunset aperitivo.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Carovigno">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carovigno_centro_storico.jpg?width=900" alt="The old town of Carovigno" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Carovigno_-_Castello_Dentice_di_Frasso.jpg?width=900" alt="Castello Dentice di Frasso in Carovigno" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Castello_di_Carovigno.jpg?width=900" alt="The castle of Carovigno" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">The home town &middot; ~10 min</span>
+                <h3>Carovigno</h3>
+                <p>Our own town is quietly serious about food: <strong>Dissapore di Andrea Catalano</strong> earned a Michelin star in the 2026 guide (closed Mondays — book far ahead for 10), with <strong>Già Sotto l'Arco</strong> and <strong>Osteria Casale Ferrovia</strong> (an Apulian osteria in a restored olive-oil mill by the train station) also Michelin-selected. Wander up to Castello Dentice di Frasso, then join the evening passeggiata — few international tourists make it here.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Ceglie Messapica">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ceglie_Messapica_-_Centro_storico.jpg?width=900" alt="The old town of Ceglie Messapica" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stradine_centro_storico_Ceglie_Messapica_1.JPG?width=900" alt="Narrow lanes of Ceglie Messapica's historic center" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_Plebiscito_-_Ceglie_Messapica.jpg?width=900" alt="Piazza Plebiscito, the main square of Ceglie Messapica" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Food capital &middot; ~30 min</span>
+                <h3>Ceglie Messapica</h3>
+                <p>The Valle d'Itria's official food capital. The anchor is <strong>Cibus</strong> — a Bib Gourmand trattoria in a 15th-century convent with its own cheese-aging caves (closed Tuesdays; essential to book for 10). Back it up with <strong>Osteria Pugliese</strong>'s huge-value antipasti, <strong>Da Gino</strong>'s thirteen-dish foraged-vegetable antipasto, and <strong>Forno San Lorenzo</strong> for the Slow Food&ndash;listed biscotto cegliese.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Cisternino">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Arco_cisternino_centro_storico.jpg?width=900" alt="An arch in Cisternino's old town lanes" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Via_centro_storico_cisternino.jpg?width=900" alt="Whitewashed street in Cisternino's historic center" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/View_from_Cisternino_(2797182979).jpg?width=900" alt="View from Cisternino over the Valle d'Itria" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Bombette night &middot; ~30 min</span>
+                <h3>Cisternino</h3>
+                <p>Puglia's capital of <em>fornelli pronti</em> — about a dozen butcher shops in the old town that grill what you pick at the counter, with bombette (stuffed pork rolls) the signature. <strong>Al Vecchio Fornello</strong> does breaded, grana-pesto, spicy, and sun-dried-tomato-and-caciocavallo varieties, priced by the 100 g. Go in the evening and reserve — the little center fills fast in July.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Alberobello">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_View_from_Piazza_Giangirolamo_II_-_03.jpg?width=900" alt="Trulli houses seen from Piazza Giangirolamo II in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_BW_2016-10-16_13-43-03.jpg?width=900" alt="Row of trulli houses in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_Trullo_Sovrano_-_1.jpg?width=900" alt="The two-storey Trullo Sovrano in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Go before 9 a.m. &middot; ~55 min</span>
+                <h3>Alberobello</h3>
+                <p>Puglia's most visited town: ~1,500 UNESCO-listed trulli. Arrive before 9 a.m. — the tour buses land after 10 — and cross from the souvenir-shop side (Rione Monti) to the quieter Aia Piccola district, where some 590 trulli are still lived in. <strong>Casa Nova</strong>, in the vaulted cellar of a 1700s olive-oil mill, is the verified lunch pick.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Locorotondo">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Locorotondo,_centro_storico_01.jpg?width=900" alt="A whitewashed lane in Locorotondo's circular old town" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Panorama_of_Locorotondo.jpg?width=900" alt="Panoramic view of hilltop Locorotondo" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Locorotondo-panorama.jpg?width=900" alt="Locorotondo's skyline over the Valle d'Itria" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Evening stroll &middot; ~40 min</span>
+                <h3>Locorotondo</h3>
+                <p>A perfect circle of whitewashed lanes on a Valle d'Itria hilltop, ranked among Italy's most beautiful villages. Touristy by day but lovely in the evening: balcony views over the trulli-dotted valley with a glass of the town's own crisp white wine. Pairs naturally with Martina Franca and Alberobello — all three sit within ten kilometers of each other.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Martina Franca">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Centro_Storico_(Martina_Franca)_(2664451342).jpg?width=900" alt="Baroque streetscape in Martina Franca's old town" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Palazzo_Ducale,_Martina_Franca,_centro_storico.jpg?width=900" alt="Palazzo Ducale in Martina Franca" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Martina_Franca_-_Basilica_di_San_Martino_-_1.jpg?width=900" alt="Baroque facade of the Basilica di San Martino" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Baroque lanes &middot; ~45 min</span>
+                <h3>Martina Franca</h3>
+                <p>The Valle d'Itria's elegant one: baroque palazzi, the Palazzo Ducale, the Basilica di San Martino, and capocollo — the town's celebrated cured pork. The dining headline is <strong>Bros'</strong>, the famed creative restaurant that relocated here from Lecce in 2025, with its Bib Gourmand sibling <strong>Bros' Trattoria</strong> as the more bookable (and more affordable) table for a group.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Polignano a Mare">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/70044_Polignano_A_Mare_BA%2C_Italy_-_panoramio_%284%29.jpg?width=900" alt="Polignano a Mare old town perched on sea cliffs" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lama_Monachile_Arpa_2022.jpg?width=900" alt="Lama Monachile cove and beach in Polignano a Mare" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fine_primavera_al_Porticciolo_di_San_Vito_%28Polignano_a_Mare_-_BA%29.jpg?width=900" alt="Porticciolo di San Vito harbor at Polignano a Mare" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Take the train &middot; ~50 min</span>
+                <h3>Polignano a Mare</h3>
+                <p>The cliff-top town above the Lama Monachile cove — spectacular and, in July, mobbed; parking is stressful enough that the train is the smarter play. Built for a 2&ndash;3 hour visit around food: <strong>Pescaria</strong>'s famous seafood panini (go before 12:30 or after 2:30 to dodge the queue), then <strong>Il Super Mago del Gelo</strong> (est. 1935) for the original caffè speciale — espresso, cream, amaretto, lemon peel — or gelato at <strong>Gusto Caruso</strong>.</p>
+              </div>
+            </article>
+            <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Lecce">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lecce_-_Santa_Croce_-_16.jpg?width=900" alt="Baroque facade of Basilica di Santa Croce in Lecce" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_%28Lecce%29_03.jpg?width=900" alt="Lecce Cathedral on Piazza del Duomo" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lecce_-_Night_-_01.jpg?width=900" alt="Piazza del Duomo in Lecce at night" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Full-day baroque &middot; ~1h</span>
+                <h3>Lecce</h3>
+                <p>The Baroque capital of the south: Basilica di Santa Croce's riotous facade, Piazza del Duomo, a Roman amphitheater in the main square, and golden Lecce-stone everywhere. Start the day like a local with a pasticciotto — warm custard-filled shortcrust — and an iced caffè leccese. The one big town our restaurant fact-check didn't crack, so scout dinner on the ground or ask the villa hosts.</p>
+              </div>
+            </article>
+            <article class="thing thing-wide">
+              <h3>The dinner-table rules</h3>
+              <p>How to actually pull off town nights with 10 people in the last week of July.</p>
+              <div class="route-wide-inner">
+                <div>
+                  <h4 class="route-subhead">Booking and timing</h4>
+                  <dl class="spec">
+                    <div class="spec-row">
+                      <dt>Reserve everything</dt>
+                      <dd>Every sit-down dinner for 10 needs a booking, often a week-plus ahead in late July: Cibus, Casa San Giacomo, Al Vecchio Fornello, and especially the newly starred Dissapore.</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Time-shift</dt>
+                      <dd>Hill towns are tour-bus territory midday. Alberobello before 9 a.m.; Ostuni, Locorotondo, and Cisternino after 5 p.m. for golden hour and dinner.</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Parking</dt>
+                      <dd>Historic centers are ZTL zones (residents only). Park in the peripheral paid lots and walk in — and split the group across cars rather than hunting for one big space.</dd>
+                    </div>
+                    <div class="spec-row">
+                      <dt>Michelin map</dt>
+                      <dd>Within ~30 minutes of the villa: Ostuni has five Michelin-selected restaurants, Carovigno three (one starred), Ceglie Messapica a Bib Gourmand, and Martina Franca the Bros' duo. Aim the special-occasion dinners here.</dd>
+                    </div>
+                  </dl>
+                </div>
+                <div>
+                  <h4 class="route-subhead">How to combine them</h4>
+                  <ul class="route-alt-list">
+                    <li>
+                      <strong>The Valle d'Itria loop</strong>
+                      Alberobello, Locorotondo, and Martina Franca sit within ten kilometers of each other — do all three in one day (Alberobello first, at opening), then finish with bombette in Cisternino on the drive home.
+                    </li>
+                    <li>
+                      <strong>The Salento day</strong>
+                      Pair a morning at Baia dei Turchi or Torre dell'Orso with a late-afternoon wander and dinner in Lecce or Otranto on the way back.
+                    </li>
+                    <li>
+                      <strong>Still unverified</strong>
+                      Otranto, Gallipoli, and Monopoli are all reputed gems, but their food scenes didn't clear our fact-checking round — treat them as scout-it-yourself territory.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+  font-family: "Rubik", "Helvetica", "Arial", sans-serif;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #525252;
+  text-decoration: none;
+  transition: color 400ms ease-in;
+}
+
+a:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a.blue-a {
+  color: #007bff;
+}
+
+/* --- desktop sidebar --- */
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 210px;
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px solid #c2c2c2;
+}
+
+.nav-menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-ul {
+  width: 70%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-ul > li {
+  list-style-type: none;
+  margin: 10px 0;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.nav-ul > li > a {
+  color: #000;
+}
+
+.nav-ul > li > a:hover {
+  color: #007bff;
+}
+
+.profile-img {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  margin: 10% 0;
+}
+
+.nav-contact-me {
+  width: 70%;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10%;
+}
+
+/* --- mobile header --- */
+
+.nav-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 50px;
+  z-index: 100;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 20px;
+  box-shadow: 0 0 8px #c2c2c2;
+}
+
+.mobile-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.mobile-head {
+  font-size: 0.9em;
+  font-weight: bold;
+  margin: 0;
+}
+
+.mobile-contact-me {
+  font-size: 1.1rem;
+  display: flex;
+  gap: 14px;
+}
+
+/* --- main content --- */
+
+.app-main-col {
+  position: fixed;
+  left: 210px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+}
+
+.layout-container {
+  max-width: 90%;
+  padding: 5%;
+}
+
+.contact-me {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-container {
+    display: none;
+  }
+
+  .nav-mobile {
+    display: flex;
+  }
+
+  .app-main-col {
+    left: 0;
+    padding-top: 50px;
+  }
+}
