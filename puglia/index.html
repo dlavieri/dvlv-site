@@ -238,9 +238,7 @@
       }
 
       .villa-summary {
-        position: sticky;
-        top: 92px;
-        padding: 1.5rem;
+        padding: 1.75rem;
         border: 1px solid var(--line);
         border-radius: 8px;
         background: var(--paper);
@@ -290,7 +288,7 @@
 
       .metric-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 0.75rem;
         margin: 1.25rem 0;
       }
@@ -805,6 +803,248 @@
         mix-blend-mode: darken;
       }
 
+      .calendar {
+        display: grid;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: var(--limestone);
+        box-shadow: var(--shadow);
+      }
+
+      .cal-day {
+        display: grid;
+        grid-template-columns: 130px 1fr;
+        gap: 1.5rem;
+        padding: 1.6rem;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .cal-day:last-child {
+        border-bottom: 0;
+      }
+
+      .cal-day.is-featured {
+        background: rgba(233, 189, 79, 0.12);
+      }
+
+      .cal-date {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+      }
+
+      .cal-dow {
+        color: var(--terracotta);
+        font-size: 0.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .cal-date strong {
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.85rem;
+        line-height: 1;
+      }
+
+      .cal-note {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .cal-events {
+        display: grid;
+        gap: 0.9rem;
+        align-content: start;
+      }
+
+      .cal-open {
+        align-self: center;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .cal-event {
+        display: grid;
+        gap: 0.5rem;
+      }
+
+      .cal-event h3 {
+        margin: 0 0 0.2rem;
+        font-size: 1.05rem;
+      }
+
+      .cal-event p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .cal-time {
+        justify-self: start;
+        padding: 0.3rem 0.65rem;
+        border: 1px solid rgba(46, 95, 143, 0.3);
+        border-radius: 999px;
+        background: rgba(255, 250, 240, 0.8);
+        color: var(--olive-dark);
+        font-size: 0.8rem;
+        font-weight: 900;
+        white-space: nowrap;
+      }
+
+      .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.75rem;
+        margin-top: 0.3rem;
+      }
+
+      .recipe-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--terracotta);
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .recipe-card h4 {
+        margin: 0 0 0.3rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.05rem;
+        line-height: 1.15;
+      }
+
+      .recipe-tag {
+        display: block;
+        margin-bottom: 0.7rem;
+        color: var(--terracotta);
+        font-size: 0.7rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .recipe-ingredients {
+        margin: 0 0 0.7rem;
+        padding-left: 1.05rem;
+        font-size: 0.86rem;
+      }
+
+      .recipe-ingredients li {
+        margin-bottom: 0.2rem;
+      }
+
+      .recipe-method {
+        margin: auto 0 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      .tasting {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-top: 5px solid var(--sun);
+        border-radius: 8px;
+        background: var(--white);
+      }
+
+      .tasting-media {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px;
+        background: var(--line);
+      }
+
+      .tasting-media img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: #d8d3c7;
+      }
+
+      .tasting-body {
+        padding: 1.5rem;
+      }
+
+      .tasting-body h4 {
+        margin: 0 0 0.25rem;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .tasting-loc {
+        margin: 0 0 1rem;
+        color: var(--sea);
+        font-size: 0.85rem;
+        font-weight: 800;
+      }
+
+      .tasting-body > p {
+        color: var(--muted);
+      }
+
+      .tasting-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+        margin: 1.4rem 0;
+      }
+
+      .tasting-options-single {
+        grid-template-columns: 1fr;
+      }
+
+      .tasting-option {
+        padding: 0.9rem 1rem;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .tasting-option strong {
+        display: block;
+        color: var(--olive-dark);
+      }
+
+      .tasting-option span {
+        display: block;
+        margin-top: 0.15rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .tasting-price {
+        display: inline-block;
+        margin-top: 0.45rem;
+        color: var(--terracotta);
+        font-weight: 900;
+      }
+
+      .tasting-foot {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 1.1rem;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      .tasting-foot .button {
+        min-height: 42px;
+        padding: 0.55rem 1rem;
+        background: var(--olive);
+        color: var(--white);
+        font-size: 0.9rem;
+      }
+
 @media (max-width: 980px) {
         .event-strip-inner,
         .section-head,
@@ -812,17 +1052,15 @@
           grid-template-columns: 1fr;
         }
 
-        .villa-summary {
-          position: static;
-        }
-
+        .metric-grid,
         .schedule-grid,
         .route-grid {
           grid-template-columns: repeat(2, 1fr);
         }
 
         .attendee-grid,
-        .things-grid {
+        .things-grid,
+        .recipe-grid {
           grid-template-columns: repeat(3, 1fr);
         }
 
@@ -893,6 +1131,33 @@
           flex: 1;
           padding: 0.9rem 1rem 0.9rem 0.25rem;
         }
+
+        .cal-day {
+          grid-template-columns: 1fr;
+          gap: 0.9rem;
+        }
+
+        .cal-event {
+          grid-template-columns: 1fr;
+          gap: 0.4rem;
+        }
+
+        .cal-time {
+          justify-self: start;
+        }
+
+        .recipe-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .tasting-media,
+        .tasting-options {
+          grid-template-columns: 1fr;
+        }
+
+        .tasting-media img {
+          height: 220px;
+        }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -950,9 +1215,6 @@
               <p class="eyebrow">Attendees</p>
               <h2 id="attendees-title">The guest list</h2>
             </div>
-            <p>
-              A shared cast for the villa week, with room for names, arrival notes, and portraits as the plans firm up.
-            </p>
           </div>
 
           <div class="attendee-grid">
@@ -1081,9 +1343,6 @@
               <p class="eyebrow">Accommodations</p>
               <h2 id="accommodations-title">Villa Pezze</h2>
             </div>
-            <p>
-              A modern stone villa near Carovigno with a main house, a separate annexe, gardens, and a private pool. The listing places the villa close to Ostuni, Brindisi, and the Adriatic beaches.
-            </p>
           </div>
 
           <div class="villa-scroll">
@@ -1130,12 +1389,8 @@
             </div>
           </div>
 
-          <div class="split">
-            <aside class="villa-summary" aria-label="Villa Pezze summary">
+          <aside class="villa-summary" aria-label="Villa Pezze summary">
               <h3>Stay details</h3>
-              <p>
-                Oliver's Travels lists Villa Pezze as a single-storey retreat with a four-bedroom main villa and a two-bedroom annexe, sleeping up to 12 guests.
-              </p>
 
               <address class="villa-address">
                 <span class="label">Address</span>
@@ -1167,14 +1422,12 @@
                 <li>Air conditioning, Wi-Fi, satellite TV, parking, washing machine, and dishwasher.</li>
                 <li>Nearest train station: Stazione di Carovigno, about 4 km from the villa.</li>
               </ul>
-            </aside>
+          </aside>
 
-              <p class="source-note">
-                Villa details and photos are sourced from
-                <a href="https://www.oliverstravels.com/italy/puglia/villa-pezze/" target="_blank" rel="noreferrer">Oliver's Travels</a>.
-              </p>
-            </div>
-          </div>
+          <p class="source-note">
+            Villa details and photos are sourced from
+            <a href="https://www.oliverstravels.com/italy/puglia/villa-pezze/" target="_blank" rel="noreferrer">Oliver's Travels</a>.
+          </p>
         </div>
       </section>
 
@@ -1189,9 +1442,6 @@
               <p class="eyebrow">Logistics</p>
               <h2 id="logistics-title">Getting to the villa</h2>
             </div>
-            <p>
-              Brindisi is the closest arrival point. Rome works best as a connection city if you are flying internationally or want to turn the trip into a longer Italian itinerary.
-            </p>
           </div>
 
           <div class="route-grid">
@@ -1443,8 +1693,19 @@
               </div>
             </article>
             <article class="thing">
+              <div class="thing-gallery" aria-label="Photos of Alberobello">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_View_from_Piazza_Giangirolamo_II_-_03.jpg?width=900" alt="Trulli houses seen from Piazza Giangirolamo II in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_BW_2016-10-16_13-43-03.jpg?width=900" alt="Row of trulli houses in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_Trullo_Sovrano_-_1.jpg?width=900" alt="The two-storey Trullo Sovrano in Alberobello" loading="lazy" referrerpolicy="no-referrer">
+              </div>
+              <div class="thing-body">
+                <span class="thing-tag">Go before 9 a.m. &middot; ~55 min</span>
+                <h3>Alberobello</h3>
+                <p>Puglia's most visited town: ~1,500 UNESCO-listed trulli. Arrive before 9 a.m. — the tour buses land after 10 — and cross from the souvenir-shop side (Rione Monti) to the quieter Aia Piccola district, where some 590 trulli are still lived in. <strong>Casa Nova</strong>, in the vaulted cellar of a 1700s olive-oil mill, is the verified lunch pick.</p>
+              </div>
+            </article>
+            <article class="thing">
               <div class="thing-gallery" aria-label="Photos of Ceglie Messapica">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ceglie_Messapica_-_Centro_storico.jpg?width=900" alt="The old town of Ceglie Messapica" loading="lazy" referrerpolicy="no-referrer">
                 <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Stradine_centro_storico_Ceglie_Messapica_1.JPG?width=900" alt="Narrow lanes of Ceglie Messapica's historic center" loading="lazy" referrerpolicy="no-referrer">
                 <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Piazza_Plebiscito_-_Ceglie_Messapica.jpg?width=900" alt="Piazza Plebiscito, the main square of Ceglie Messapica" loading="lazy" referrerpolicy="no-referrer">
               </div>
@@ -1464,18 +1725,6 @@
                 <span class="thing-tag">Bombette night &middot; ~30 min</span>
                 <h3>Cisternino</h3>
                 <p>Puglia's capital of <em>fornelli pronti</em> — about a dozen butcher shops in the old town that grill what you pick at the counter, with bombette (stuffed pork rolls) the signature. <strong>Al Vecchio Fornello</strong> does breaded, grana-pesto, spicy, and sun-dried-tomato-and-caciocavallo varieties, priced by the 100 g. Go in the evening and reserve — the little center fills fast in July.</p>
-              </div>
-            </article>
-            <article class="thing">
-              <div class="thing-gallery" aria-label="Photos of Alberobello">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_View_from_Piazza_Giangirolamo_II_-_03.jpg?width=900" alt="Trulli houses seen from Piazza Giangirolamo II in Alberobello" loading="lazy" referrerpolicy="no-referrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_BW_2016-10-16_13-43-03.jpg?width=900" alt="Row of trulli houses in Alberobello" loading="lazy" referrerpolicy="no-referrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Alberobello_-_Trullo_Sovrano_-_1.jpg?width=900" alt="The two-storey Trullo Sovrano in Alberobello" loading="lazy" referrerpolicy="no-referrer">
-              </div>
-              <div class="thing-body">
-                <span class="thing-tag">Go before 9 a.m. &middot; ~55 min</span>
-                <h3>Alberobello</h3>
-                <p>Puglia's most visited town: ~1,500 UNESCO-listed trulli. Arrive before 9 a.m. — the tour buses land after 10 — and cross from the souvenir-shop side (Rione Monti) to the quieter Aia Piccola district, where some 590 trulli are still lived in. <strong>Casa Nova</strong>, in the vaulted cellar of a 1700s olive-oil mill, is the verified lunch pick.</p>
               </div>
             </article>
             <article class="thing">
@@ -1514,62 +1763,202 @@
                 <p>The cliff-top town above the Lama Monachile cove — spectacular and, in July, mobbed; parking is stressful enough that the train is the smarter play. Built for a 2&ndash;3 hour visit around food: <strong>Pescaria</strong>'s famous seafood panini (go before 12:30 or after 2:30 to dodge the queue), then <strong>Il Super Mago del Gelo</strong> (est. 1935) for the original caffè speciale — espresso, cream, amaretto, lemon peel — or gelato at <strong>Gusto Caruso</strong>.</p>
               </div>
             </article>
-            <article class="thing">
-              <div class="thing-gallery" aria-label="Photos of Lecce">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lecce_-_Santa_Croce_-_16.jpg?width=900" alt="Baroque facade of Basilica di Santa Croce in Lecce" loading="lazy" referrerpolicy="no-referrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Duomo_%28Lecce%29_03.jpg?width=900" alt="Lecce Cathedral on Piazza del Duomo" loading="lazy" referrerpolicy="no-referrer">
-                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lecce_-_Night_-_01.jpg?width=900" alt="Piazza del Duomo in Lecce at night" loading="lazy" referrerpolicy="no-referrer">
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider" aria-hidden="true">
+        <img src="assets/calendar-illustration.jpeg" alt="" loading="lazy">
+      </div>
+
+      <section class="section" id="calendar" aria-labelledby="calendar-title">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Week at a glance</p>
+              <h2 id="calendar-title">Calendar of events</h2>
+            </div>
+            <p>
+              The shared plan for the villa week — check-in Monday, check-out Saturday. Most days stay open for the beach, the pool, and town runs; the one fixed booking so far is a wine tasting at Masseria Altemura.
+            </p>
+          </div>
+
+          <div class="calendar">
+            <div class="cal-day">
+              <div class="cal-date">
+                <span class="cal-dow">Monday</span>
+                <strong>July 27</strong>
+                <span class="cal-note">Arrival day</span>
               </div>
-              <div class="thing-body">
-                <span class="thing-tag">Full-day baroque &middot; ~1h</span>
-                <h3>Lecce</h3>
-                <p>The Baroque capital of the south: Basilica di Santa Croce's riotous facade, Piazza del Duomo, a Roman amphitheater in the main square, and golden Lecce-stone everywhere. Start the day like a local with a pasticciotto — warm custard-filled shortcrust — and an iced caffè leccese. The one big town our restaurant fact-check didn't crack, so scout dinner on the ground or ask the villa hosts.</p>
-              </div>
-            </article>
-            <article class="thing thing-wide">
-              <h3>The dinner-table rules</h3>
-              <p>How to actually pull off town nights with 10 people in the last week of July.</p>
-              <div class="route-wide-inner">
-                <div>
-                  <h4 class="route-subhead">Booking and timing</h4>
-                  <dl class="spec">
-                    <div class="spec-row">
-                      <dt>Reserve everything</dt>
-                      <dd>Every sit-down dinner for 10 needs a booking, often a week-plus ahead in late July: Cibus, Casa San Giacomo, Al Vecchio Fornello, and especially the newly starred Dissapore.</dd>
-                    </div>
-                    <div class="spec-row">
-                      <dt>Time-shift</dt>
-                      <dd>Hill towns are tour-bus territory midday. Alberobello before 9 a.m.; Ostuni, Locorotondo, and Cisternino after 5 p.m. for golden hour and dinner.</dd>
-                    </div>
-                    <div class="spec-row">
-                      <dt>Parking</dt>
-                      <dd>Historic centers are ZTL zones (residents only). Park in the peripheral paid lots and walk in — and split the group across cars rather than hunting for one big space.</dd>
-                    </div>
-                    <div class="spec-row">
-                      <dt>Michelin map</dt>
-                      <dd>Within ~30 minutes of the villa: Ostuni has five Michelin-selected restaurants, Carovigno three (one starred), Ceglie Messapica a Bib Gourmand, and Martina Franca the Bros' duo. Aim the special-occasion dinners here.</dd>
-                    </div>
-                  </dl>
+              <div class="cal-events">
+                <div class="cal-event">
+                  <span class="cal-time">From 4 PM</span>
+                  <div>
+                    <h3>Check-in at Villa Pezze</h3>
+                    <p>Settle in, claim rooms, and ease into the week with a first dinner at the villa.</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 class="route-subhead">How to combine them</h4>
-                  <ul class="route-alt-list">
-                    <li>
-                      <strong>The Valle d'Itria loop</strong>
-                      Alberobello, Locorotondo, and Martina Franca sit within ten kilometers of each other — do all three in one day (Alberobello first, at opening), then finish with bombette in Cisternino on the drive home.
-                    </li>
-                    <li>
-                      <strong>The Salento day</strong>
-                      Pair a morning at Baia dei Turchi or Torre dell'Orso with a late-afternoon wander and dinner in Lecce or Otranto on the way back.
-                    </li>
-                    <li>
-                      <strong>Still unverified</strong>
-                      Otranto, Gallipoli, and Monopoli are all reputed gems, but their food scenes didn't clear our fact-checking round — treat them as scout-it-yourself territory.
-                    </li>
-                  </ul>
+                <div class="cal-event">
+                  <span class="cal-time">6:30 PM</span>
+                  <div>
+                    <h3>Spritz sampler</h3>
+                    <p>Kick off the week on the terrace with a flight of spritzes. Recipes below — mix your own, or take requests.</p>
+                    <div class="recipe-grid">
+                      <article class="recipe-card">
+                        <h4>Aperol Spritz</h4>
+                        <span class="recipe-tag">The classic</span>
+                        <ul class="recipe-ingredients">
+                          <li>3 parts Prosecco</li>
+                          <li>2 parts Aperol</li>
+                          <li>1 splash soda water</li>
+                          <li>Orange slice</li>
+                        </ul>
+                        <p class="recipe-method">Build over ice in a big wine glass, stir once, drop in the orange.</p>
+                      </article>
+                      <article class="recipe-card">
+                        <h4>Hugo Spritz</h4>
+                        <span class="recipe-tag">Elderflower &amp; mint</span>
+                        <ul class="recipe-ingredients">
+                          <li>3 parts Prosecco</li>
+                          <li>2 parts elderflower syrup</li>
+                          <li>1 splash soda water</li>
+                          <li>Mint sprig + lime</li>
+                        </ul>
+                        <p class="recipe-method">Gently press the mint with lime, add ice, pour, and stir.</p>
+                      </article>
+                      <article class="recipe-card">
+                        <h4>Limoncello Spritz</h4>
+                        <span class="recipe-tag">Amalfi lemon</span>
+                        <ul class="recipe-ingredients">
+                          <li>2 parts limoncello</li>
+                          <li>3 parts Prosecco</li>
+                          <li>1 splash soda water</li>
+                          <li>Lemon slice + mint</li>
+                        </ul>
+                        <p class="recipe-method">Build over plenty of ice, stir, and garnish with lemon and mint.</p>
+                      </article>
+                      <article class="recipe-card">
+                        <h4>Lambrusco Spritz</h4>
+                        <span class="recipe-tag">Sparkling red</span>
+                        <ul class="recipe-ingredients">
+                          <li>3 parts chilled Lambrusco</li>
+                          <li>1 splash soda water</li>
+                          <li>Orange + a few berries</li>
+                        </ul>
+                        <p class="recipe-method">Pour the Lambrusco over ice, top with soda, and add the fruit.</p>
+                      </article>
+                      <article class="recipe-card">
+                        <h4>Diet Cokagne</h4>
+                        <span class="recipe-tag">The house wildcard</span>
+                        <ul class="recipe-ingredients">
+                          <li>2 parts Diet Coke</li>
+                          <li>2 parts Prosecco</li>
+                          <li>Squeeze of lime</li>
+                        </ul>
+                        <p class="recipe-method">Pour over ice, squeeze the lime, and accept no judgment.</p>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+                <div class="cal-event">
+                  <span class="cal-time">7:30 PM</span>
+                  <div>
+                    <h3>Pizza making</h3>
+                    <p>Fire up the outdoor pizza oven and build your own — dough, sauce, and toppings out on the terrace.</p>
+                  </div>
                 </div>
               </div>
-            </article>
+            </div>
+
+            <div class="cal-day">
+              <div class="cal-date">
+                <span class="cal-dow">Tuesday</span>
+                <strong>July 28</strong>
+              </div>
+              <div class="cal-events">
+                <p class="cal-open">Open day — beach, pool, and settling in. Town night to be decided.</p>
+              </div>
+            </div>
+
+            <div class="cal-day is-featured">
+              <div class="cal-date">
+                <span class="cal-dow">Wednesday</span>
+                <strong>July 29</strong>
+                <span class="cal-note">Featured experience</span>
+              </div>
+              <div class="cal-events">
+                <div class="cal-event">
+                  <span class="cal-time">11:30 AM</span>
+                  <div>
+                    <h3>Wine tasting at Masseria Altemura</h3>
+                    <p>A guided tour-and-tasting at a 17th-century Salento wine estate in the Primitivo di Manduria DOC.</p>
+                  </div>
+                </div>
+                <article class="tasting">
+                  <div class="tasting-media" aria-label="Photos of Masseria Altemura">
+                    <img src="assets/altemura-hero.png" alt="Masseria Altemura estate among its Salento vineyards" loading="lazy">
+                    <img src="assets/altemura-estate.jpg" alt="The 17th-century farmhouse at Masseria Altemura" loading="lazy">
+                    <img src="assets/altemura-wine.jpg" alt="A glass of Masseria Altemura wine" loading="lazy">
+                  </div>
+                  <div class="tasting-body">
+                    <h4>Masseria Altemura</h4>
+                    <p class="tasting-loc">Salento &middot; Primitivo di Manduria DOC &middot; the Zonin family</p>
+                    <p>
+                      A 17th-century farmstead embraced by the light of Salento and the breezes of two seas. The tour winds through the vineyards, the old farmhouse, and the winery, finishing in tasting rooms with original cross-vaulted ceilings dating to 1676. Tastings pair the estate's symbolic wines — Primitivo, Negroamaro, Fiano, and Aglianico — with typical Apulian food. We're booked for the Lunch &amp; Six Wines experience.
+                    </p>
+                    <div class="tasting-options tasting-options-single">
+                      <div class="tasting-option">
+                        <strong>Lunch &amp; six wines</strong>
+                        <span>A guided tour of the vineyards, farmhouse, and winery, followed by Apulian cuisine paired with six prestigious estate wines.</span>
+                        <span class="tasting-price">€65 per person</span>
+                      </div>
+                    </div>
+                    <div class="tasting-foot">
+                      <span>Booking required &middot; +39 0831 740485 &middot; +39 342 79 73 923</span>
+                      <a class="button" href="https://www.masseriaaltemura.it/en/tastings/" target="_blank" rel="noopener">Tours &amp; tastings &#8599;</a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="cal-day">
+              <div class="cal-date">
+                <span class="cal-dow">Thursday</span>
+                <strong>July 30</strong>
+                <span class="cal-note">Birthday</span>
+              </div>
+              <div class="cal-events">
+                <p class="cal-open">The big night — celebration dinner at the villa or a starred table nearby. Details to come.</p>
+              </div>
+            </div>
+
+            <div class="cal-day">
+              <div class="cal-date">
+                <span class="cal-dow">Friday</span>
+                <strong>July 31</strong>
+              </div>
+              <div class="cal-events">
+                <p class="cal-open">Open day — Valle d'Itria loop or a Salento beach. Dinner reservation to be decided.</p>
+              </div>
+            </div>
+
+            <div class="cal-day">
+              <div class="cal-date">
+                <span class="cal-dow">Saturday</span>
+                <strong>August 1</strong>
+                <span class="cal-note">Departure day</span>
+              </div>
+              <div class="cal-events">
+                <div class="cal-event">
+                  <span class="cal-time">By 10 AM</span>
+                  <div>
+                    <h3>Check-out from Villa Pezze</h3>
+                    <p>Pack up, final coffee on the terrace, and onward travel.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
